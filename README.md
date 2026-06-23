@@ -1,14 +1,14 @@
-# 🌱 GrowthPilot AI
+# ASCENDIQ
 
 > **Your AI Chief Growth Officer** — A premium multi-agent business intelligence platform for Indian SMEs.
 
-Built with **LangGraph** + **Gemini AI** + **Streamlit** for hackathons and MVPs.
+Built with **LangGraph** + **Streamlit** for hackathons and MVPs.
 
 ---
 
 ## 🎯 What It Does
 
-GrowthPilot AI deploys **5 specialized AI agents** to analyze your business and generate actionable growth strategies:
+ASCENDIQ deploys **5 specialized AI agents** to analyze your business and generate actionable growth strategies:
 
 | Agent | What It Does |
 |-------|-------------|
@@ -48,7 +48,7 @@ Open `http://localhost:8501` in your browser.
 ## 🏗️ Project Structure
 
 ```
-growthpilot/
+ascendiq/
 ├── app.py                    # Main Streamlit app
 ├── workflow.py               # LangGraph multi-agent workflow
 ├── requirements.txt
@@ -119,4 +119,4 @@ api_key = st.secrets.get("GEMINI_API_KEY", "")
 
 ---
 
-Made with ❤️ for Indian SMEs · Powered by Google Gemini + LangGraph
+Made with ❤️ for Indian SMEs · 
