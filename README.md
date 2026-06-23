@@ -27,7 +27,7 @@ ASCENDIQ deploys **5 specialized AI agents** to analyze your business and genera
 
 ```bash
 git clone <your-repo>
-cd growthpilot
+cd ascendiq
 pip install -r requirements.txt
 ```
 
