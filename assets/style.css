@@ -1,0 +1,749 @@
+/* GrowthPilot AI - Premium CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --bg: #F8F5F0;
+    --surface: #FFFFFF;
+    --primary: #1F4D3A;
+    --primary-light: #2A6B50;
+    --accent: #7A9E7E;
+    --accent-light: #A8C5AB;
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B7280;
+    --border: #E8E2D9;
+    --shadow: 0 2px 16px rgba(31,77,58,0.08);
+    --shadow-md: 0 4px 24px rgba(31,77,58,0.12);
+    --radius: 16px;
+    --radius-sm: 10px;
+}
+
+/* Global */
+.stApp {
+    background-color: var(--bg) !important;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Hide Streamlit branding */
+#MainMenu, footer, header { visibility: hidden; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* ===================== LANDING PAGE ===================== */
+.hero-wrapper {
+    background: linear-gradient(135deg, var(--primary) 0%, #2D6B4F 50%, #1A3D2E 100%);
+    border-radius: 24px;
+    padding: 72px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.hero-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(122,158,126,0.15);
+}
+
+.hero-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(122,158,126,0.10);
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(122,158,126,0.25);
+    color: var(--accent-light);
+    border: 1px solid rgba(122,158,126,0.4);
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title span {
+    color: var(--accent-light);
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: block;
+}
+
+.hero-stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* ===================== SECTION HEADERS ===================== */
+.section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.section-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* ===================== BUSINESS TYPE CARDS ===================== */
+.biz-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.biz-card {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.biz-card:hover, .biz-card.selected {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(31,77,58,0.12), var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.biz-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    display: block;
+    line-height: 1.2;
+    min-height: 50px;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.biz-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.biz-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+
+/* ===================== KPI CARDS ===================== */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.kpi-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 80px; height: 80px;
+    border-radius: 0 0 0 80px;
+    background: linear-gradient(135deg, var(--accent-light), transparent);
+    opacity: 0.2;
+}
+
+.kpi-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+.kpi-value {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.kpi-change {
+    font-size: 13px;
+    color: #16a34a;
+    font-weight: 500;
+}
+
+.kpi-icon {
+    font-size: 22px;
+    position: absolute;
+    top: 20px; right: 20px;
+    opacity: 0.6;
+}
+
+/* ===================== AGENT CARDS ===================== */
+.agent-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+
+.agent-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.agent-icon-wrap {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.agent-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.agent-subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.agent-output {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+/* ===================== WORKFLOW ===================== */
+.workflow-container {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 28px;
+}
+
+.workflow-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 16px 0;
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.step-bubble {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(31,77,58,0.3);
+}
+
+.step-bubble.active {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 12px rgba(31,77,58,0.3); }
+    50% { box-shadow: 0 4px 24px rgba(31,77,58,0.5), 0 0 0 6px rgba(31,77,58,0.1); }
+}
+
+.step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+    max-width: 70px;
+}
+
+.step-arrow {
+    font-size: 18px;
+    color: var(--accent);
+    padding: 0 8px;
+    margin-bottom: 24px;
+}
+
+/* ===================== CEO REPORT ===================== */
+.report-card {
+    background: linear-gradient(135deg, var(--primary) 0%, #2D6B4F 100%);
+    border-radius: 20px;
+    padding: 36px;
+    color: white;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.report-card::after {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+}
+
+.report-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.report-subtitle {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 24px;
+}
+
+.report-content {
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.92;
+}
+
+.health-score-ring {
+    display: inline-block;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 3px solid rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 74px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* ===================== TABS ===================== */
+.stTabs [data-baseweb="tab-list"] {
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    gap: 4px;
+    border: 1px solid var(--border);
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 10px 20px;
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--primary) !important;
+    color: white !important;
+}
+
+/* ===================== BUTTONS ===================== */
+.stButton > button {
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    padding: 10px 24px !important;
+    transition: all 0.2s ease !important;
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--primary) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: var(--primary-light) !important;
+    box-shadow: 0 4px 16px rgba(31,77,58,0.3) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ===================== SELECTBOX ===================== */
+.stSelectbox [data-baseweb="select"] {
+    border-radius: var(--radius-sm) !important;
+    border-color: var(--border) !important;
+    background: var(--surface) !important;
+}
+
+/* ===================== PROGRESS ===================== */
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
+    border-radius: 4px !important;
+}
+
+/* ===================== INFO BOXES ===================== */
+.info-pill {
+    display: inline-block;
+    background: rgba(31,77,58,0.08);
+    color: var(--primary);
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 4px;
+}
+
+.alert-pill {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #92400E;
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 4px;
+}
+
+/* ===================== DIVIDER ===================== */
+.gp-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 0;
+}
+
+/* ===================== SIDEBAR ===================== */
+.css-1d391kg, [data-testid="stSidebar"] {
+    background: var(--primary) !important;
+}
+
+/* Fixed logo — pinned to top-left of the sidebar, independent of its scroll */
+[data-testid="stSidebar"] {
+    position: relative !important;
+}
+
+.gp-sidebar-logo-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px; /* matches Streamlit's actual default sidebar width (not 21rem) */
+    z-index: 1000;
+    background: var(--primary);
+    padding: 16px 20px 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .gp-sidebar-logo-wrap {
+        width: 100%;
+    }
+}
+
+.gp-sidebar-logo-wrap img {
+    width: 100%;
+    max-width: 220px;
+    display: block;
+}
+
+/* Reserve space at top of scrollable sidebar content so it starts below the fixed logo */
+.gp-sidebar-spacer {
+    height: 78px;
+    width: 100%;
+}
+
+[data-testid="stSidebar"] .stMarkdown,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] p {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+[data-testid="stSidebar"] hr {
+    border-color: rgba(255,255,255,0.12) !important;
+    margin: 16px 0 !important;
+}
+
+/* Sidebar tabs (Sign In / Sign Up) */
+[data-testid="stSidebar"] .stTabs [data-baseweb="tab-list"] {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 3px !important;
+    gap: 2px !important;
+    margin-bottom: 10px !important;
+}
+
+[data-testid="stSidebar"] .stTabs [data-baseweb="tab"] {
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 13px !important;
+    padding: 6px 12px !important;
+}
+
+[data-testid="stSidebar"] .stTabs [aria-selected="true"] {
+    background: rgba(255,255,255,0.16) !important;
+    color: white !important;
+}
+
+/* Sidebar buttons — secondary (nav) style by default */
+[data-testid="stSidebar"] .stButton > button {
+    background: rgba(255,255,255,0.08) !important;
+    color: rgba(255,255,255,0.92) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    padding-left: 16px !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: rgba(255,255,255,0.16) !important;
+    border-color: rgba(255,255,255,0.24) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Sidebar primary buttons (Sign In) stay accent-colored and centered */
+[data-testid="stSidebar"] .stButton > button[kind="primary"] {
+    background: var(--accent) !important;
+    color: var(--primary) !important;
+    border: none !important;
+    text-align: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSidebar"] .stButton > button[kind="primary"]:hover {
+    background: var(--accent-light) !important;
+}
+
+/* Sidebar text inputs */
+[data-testid="stSidebar"] input {
+    background: rgba(0,0,0,0.22) !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: 8px !important;
+}
+
+[data-testid="stSidebar"] input::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+}
+
+[data-testid="stSidebar"] .stTextInput {
+    margin-bottom: 8px !important;
+}
+
+/* ===================== SPINNER ===================== */
+.stSpinner > div {
+    border-top-color: var(--primary) !important;
+}
+
+/* ===================== STATUS DOTS ===================== */
+.status-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #16a34a;
+    margin-right: 6px;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* ===================== INSIGHTS SECTION ===================== */
+.insight-tip-card {
+    background: linear-gradient(135deg, #F0F7F1 0%, #E8F4EA 100%);
+    border: 1px solid var(--accent-light);
+    border-left: 5px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.insight-tip-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.insight-tip-text {
+    font-size: 15px;
+    color: var(--primary);
+    line-height: 1.7;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.insight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.insight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.insight-win {
+    background: rgba(22, 163, 74, 0.06);
+    border: 1px solid rgba(22, 163, 74, 0.15);
+}
+
+.insight-risk {
+    background: rgba(217, 119, 6, 0.06);
+    border: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+.insight-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    line-height: 1.4;
+}
+
+.insight-text {
+    color: var(--text-primary);
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(31,77,58,0.04);
+    border: 1px solid rgba(31,77,58,0.10);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.checklist-item:hover {
+    background: rgba(31,77,58,0.08);
+}
+
+.check-box {
+    font-size: 18px;
+    color: var(--accent);
+    flex-shrink: 0;
+    line-height: 1.4;
+}
+
+.check-text {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+    .hero-title { font-size: 32px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .biz-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-stats { gap: 20px; }
+    .workflow-steps { gap: 4px; }
+}
